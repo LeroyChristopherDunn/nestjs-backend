@@ -1,8 +1,10 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, NotFoundException } from "@nestjs/common";
-import { CatService } from './cat.service';
-import { CreateCatDto } from './dto/create-cat.dto';
-import { UpdateCatDto } from './dto/update-cat.dto';
+import { Body, Controller, Delete, Get, NotFoundException, Param, Patch, Post } from "@nestjs/common";
+import { CatService } from "./cat.service";
+import { CreateCatDto } from "./dto/create-cat.dto";
+import { UpdateCatDto } from "./dto/update-cat.dto";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags('cats')
 @Controller('cats')
 export class CatController {
   constructor(private readonly catService: CatService) {}
